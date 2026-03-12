@@ -1,7 +1,5 @@
 import json, random, re, pymorphy3, numpy as np
 from sentence_transformers import SentenceTransformer
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
 from rapidfuzz import fuzz
 
 
@@ -22,6 +20,9 @@ class Model:
         self.memory_size = 10
         self.memory_embeddings = []
 
+        self.self_memory = []
+        self.self_memory_size = 8
+
         for item in self.data:
             tag = item.get("tag")
 
@@ -35,8 +36,7 @@ class Model:
                 self.patterns.append(self.normalize(p))
                 self.tags.append(tag)
 
-        self.vectorizer = TfidfVectorizer()
-        self.pattern_vectors = self.vectorizer.fit_transform(self.patterns)
+        self.pattern_embeddings = self.embedder.encode(self.patterns)
 
     def normalize(self, text):
         text = re.sub(r"[^\w\s]", "", text.lower())
@@ -55,6 +55,16 @@ class Model:
         score = sims[idx]
 
         return idx, score
+    
+    def build_context(self, input):
+        emb = self.embedder.encode([input])[0]
+
+        self.memory.append(input)
+        self.memory_embeddings.append(emb)
+
+        if len(self.memory) > self.memory_size:
+            self.memory.pop(0)
+            self.memory_embeddings.pop(0)
     
     def get_sentiment(self, text):
         text_norm = self.normalize(text)
@@ -84,9 +94,7 @@ class Model:
             return "neutral"
 
     def get_response(self, user_input):
-        self.memory.append(user_input)
-        if len(self.memory) > self.memory_size:
-            self.memory.pop(0)
+        self.build_context(user_input)
 
         text = self.normalize(user_input)
         idx, score = self.cosine(text)
