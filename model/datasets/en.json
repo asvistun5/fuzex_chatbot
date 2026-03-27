@@ -1,0 +1,111 @@
+[
+    {
+        "tag": "welcome",
+        "pt": ["Hello", "HI", "Welcome"],
+        "res": ["Hello", "Hi there! What can I do for you?", "What would you like to talk about?"]
+    },
+    {
+        "tag": "happy",
+        "pt": ["I am happy", "I feel good", "Everything is great"],
+        "res": [
+            "That's great to hear!",
+            "Keep up the good vibes!",
+            "I'm glad everything is going well for you!"
+        ]
+    },
+    {
+        "tag": "suprise",
+        "pt": ["What", "How", "Why"],
+        "res": [
+            "Wow, that's unexpected.",
+            "Seriously?",
+            "I didn't see that coming.",
+            "Wow, that's surprising!",
+            "I don't know myself.",
+            "Huh."
+        ]
+    },
+    {
+        "tag": "hurt",
+        "pt": ["I'm hurt", "I feel bad"],
+        "res": [
+            "Don't worry, I didn't mean to hurt you.",
+            "Don't cry, it's okay.",
+            "Let's keep it light, you're important to me 🙁",
+            "People who get offended are just being dramatic. 😝",
+            "Offended people get screwed 🤙"
+        ]
+    },
+    {
+        "tag": "abuse",
+        "pt": ["Loser", "Fat", "Hello"],
+        "res": [
+            "Hello, king of the keyboard warriors",
+            "Got any proof?",
+            "The only fat here is you",
+            "The blob of fat speaks",
+            "Maybe it's time to stop throwing shade?"
+        ]
+    },
+    {
+        "tag": "abuse",
+        "pt": ["No"],
+        "res": ["Or maybe yes? Think about it!", "And why is that?", "How so?"]
+    },
+    {
+        "tag": "abuse",
+        "pt": ["Yes"],
+        "res": [
+            "Well that's great, I'm happy for you",
+            "Thank goodness for that",
+            "Well that's good, I'm happy for you"
+        ]
+    },
+    {
+        "tag": "sad",
+        "pt": ["I'm sad", "I'm depressed", "I feel bad"],
+        "res": [
+            "Hang in there, this will pass",
+            "Everything will be okay, I'm sure of it",
+            "If you want, you can talk to me",
+            "I'm always here to listen to you",
+            "You're not alone, I'm with you"
+        ]
+    },
+    {
+        "tag": "serious",
+        "pt": ["Let's be serious", "This is important", "No jokes"],
+        "res": [
+            "Alright, let's focus.",
+            "I'm listening carefully.",
+            "Understood, I'll keep it serious.",
+            "Okay, I'll take this seriously.",
+            "No jokes, just facts.",
+            "I'm here and paying attention.",
+            "Let's address this with the seriousness it deserves.",
+            "I'm ready to discuss this seriously.",
+            "You have my full attention.",
+            "Let's keep things professional."
+        ]
+    },
+    {
+        "tag": "err",
+        "res": [
+            "Can you say that again?",
+            "Sorry, I didn't understand that.",
+            "...What did it say?",
+            "Could you please clarify?",
+            "Maybe try phrasing it differently?",
+            "I'm not sure I got that, could you repeat?",
+            "That didn't make sense to me.",
+            "Could you explain that another way?",
+            "I didn't catch that, can you rephrase?",
+            "Hmm, I didn't quite get that.",
+            "Could you be more specific?",
+            "I'm having trouble understanding, can you try again?",
+            "Let's try that one more time.",
+            "Sorry, that went over my head.",
+            "I'm not following, could you clarify?"
+        ]
+    }
+]
